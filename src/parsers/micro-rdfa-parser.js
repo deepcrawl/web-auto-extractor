@@ -15,17 +15,18 @@ function getPropValue(tagName, attribs, TYPE, PROP) {
 }
 
 const getAttrNames = (specName) => {
-  let TYPE, PROP;
+  let TYPE, PROP, REQU;
   if (specName.toLowerCase().startsWith("micro")) {
     TYPE = "itemtype";
     PROP = "itemprop";
+    REQU = "itemscope";
   } else if (specName.toLowerCase().startsWith("rdfa")) {
     TYPE = "typeof";
     PROP = "property";
   } else {
     throw new Error("Unsupported spec: use either micro or rdfa");
   }
-  return { TYPE, PROP };
+  return { TYPE, PROP, REQU };
 };
 
 const getType = (typeString) => {
@@ -41,13 +42,13 @@ const createHandler = function (specName) {
   let tags = [];
   let topLevelScope = {};
   let textForProp = null;
-  const { TYPE, PROP } = getAttrNames(specName);
+  const { TYPE, PROP, REQU } = getAttrNames(specName);
 
   const onopentag = function (tagName, attribs) {
     let currentScope = scopes[scopes.length - 1];
     let tag = false;
-
     if (attribs[TYPE]) {
+      if (REQU && !attribs.hasOwnProperty(REQU)) return
       if (attribs[PROP] && currentScope) {
         let newScope = {};
         currentScope[attribs[PROP]] = currentScope[attribs[PROP]] || [];
