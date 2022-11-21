@@ -1,29 +1,26 @@
 {
   "metatags": {
-    "priceCurrency": [
-      "USD",
-      "USD"
-    ],
-    "datePublished": [
-      "2009-05-08"
-    ],
-    "prepTime": [
-      "PT15M"
-    ],
-    "cookTime": [
-      "PT1H"
-    ],
-    "interactionType": [
-      "http://schema.org/CommentAction"
-    ],
-    "refresh": [
-       "30"
-    ],
-    "userInteractionCount": [
-      "140"
-    ]
+    "priceCurrency": ["USD", "USD"],
+    "datePublished": ["2009-05-08"],
+    "prepTime": ["PT15M"],
+    "cookTime": ["PT1H"],
+    "interactionType": ["http://schema.org/CommentAction"],
+    "refresh": ["30"],
+    "userInteractionCount": ["140"]
   },
   "microdata": {
+    "Offer": [
+      {
+        "@context": "http://schema.org/",
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/UsedCondition",
+        "price": "119.99",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2020-11-20",
+        "url": "https://example.com/anvil"
+      }
+    ],
     "Product": [
       {
         "@context": "http://schema.org/",
@@ -74,11 +71,7 @@
           "calories": "240 calories",
           "fatContent": "9 grams fat"
         },
-        "recipeIngredient": [
-          "3 or 4 ripe bananas, smashed",
-          "1 egg",
-          "3/4 cup of sugar"
-        ],
+        "recipeIngredient": ["3 or 4 ripe bananas, smashed", "1 egg", "3/4 cup of sugar"],
         "recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add\n  the flour last. Pour the mixture into a loaf pan and bake for one hour.",
         "interactionStatistic": {
           "@context": "http://schema.org/",
