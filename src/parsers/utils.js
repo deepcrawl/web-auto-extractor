@@ -13,3 +13,7 @@ export function getCheerioObject(html) {
   }
   return $html;
 }
+
+export function cleanNewlinesAndMultispace(html) {
+  return html.replace(/(\r\n|\n|\r)/gm, " ").replace(/\s\s+/g, ' ')
+}
