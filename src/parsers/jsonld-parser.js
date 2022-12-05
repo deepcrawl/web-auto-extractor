@@ -1,4 +1,4 @@
-import { getCheerioObject } from "./utils";
+import { getCheerioObject, cleanNewlinesAndMultispace } from "./utils";
 import $ from "cheerio";
 
 export default function (html, config = {}) {
@@ -7,7 +7,7 @@ export default function (html, config = {}) {
 
   $html('script[type="application/ld+json"]').each((index, item) => {
     try {
-      let parsedJSON = JSON.parse($(item).html());
+      let parsedJSON = JSON.parse(cleanNewlinesAndMultispace($(item).html()));
       if (!Array.isArray(parsedJSON)) {
         parsedJSON = [parsedJSON];
       }
