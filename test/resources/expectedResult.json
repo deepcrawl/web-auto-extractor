@@ -60,7 +60,7 @@
         "author": "John Smith",
         "datePublished": "2009-05-08",
         "image": "bananabread.jpg",
-        "description": "This classic banana bread recipe comes\n  from my mom -- the walnuts add a nice texture and flavor to the banana\n  bread.",
+        "description": "This classic banana bread recipe comes\n    from my mom -- the walnuts add a nice texture and flavor to the banana\n    bread.",
         "prepTime": "PT15M",
         "cookTime": "PT1H",
         "recipeYield": "1 loaf",
@@ -71,8 +71,12 @@
           "calories": "240 calories",
           "fatContent": "9 grams fat"
         },
-        "recipeIngredient": ["3 or 4 ripe bananas, smashed", "1 egg", "3/4 cup of sugar"],
-        "recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add\n  the flour last. Pour the mixture into a loaf pan and bake for one hour.",
+        "recipeIngredient": [
+          "3 or 4 ripe bananas, smashed",
+          "1 egg",
+          "3/4 cup of sugar"
+        ],
+        "recipeInstructions": "Preheat the oven to 350 degrees. Mix in the ingredients in a bowl. Add\n    the flour last. Pour the mixture into a loaf pan and bake for one hour.",
         "interactionStatistic": {
           "@context": "http://schema.org/",
           "@type": "InteractionCounter",
@@ -112,6 +116,27 @@
     ]
   },
   "jsonld": {
+    "Article": [
+      {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "articleBody": "Scott\\&#39; Selby",
+        "author": "Keith Schweigert (FOX43)",
+        "dateModified": "2024-08-07T17:02:04Z",
+        "datePublished": "2024-06-24T13:46:15Z",
+        "description": "9 women have come forward with accusations of rape or sexual assault by Andrew &quot;Scott&quot; Selby during his time in the department, resulting in 5 criminal complaints.",
+        "headline": "Lancaster Police release 1990s-era photos of former officer accused of multiple rapes",
+        "image": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB16vm8E.img?w=747&h=561&m=4&q=89",
+        "publisher": {
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB14HHmD.img"
+          },
+          "name": "WPMT Harrisburg"
+        },
+        "url": "http://www.msn.com/en-us/news/crime/lancaster-police-release-1990s-era-photos-of-former-officer-accused-of-multiple-rapes/ar-BB1oNn3R?apiversion=v2&noservercache=1&domshim=1&renderwebcomponents=1&wcseo=1&batchservertelemetry=1&noservertelemetry=1"
+      }
+    ],
     "Product": [
       {
         "@context": "http://schema.org/",
