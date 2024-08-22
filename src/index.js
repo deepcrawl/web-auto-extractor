@@ -19,15 +19,23 @@ export default function () {
     }
 
     return {
-      metatags: MetaTagsParser($html),
-      microdata: MicroRdfaParser(html, 'micro'),
-      rdfa: MicroRdfaParser(html, 'rdfa'),
-      jsonld: JsonldParser($html)
+      metatags: safely(() => MetaTagsParser($html)),
+      microdata: safely(() => MicroRdfaParser(html, 'micro')),
+      rdfa: safely(() => MicroRdfaParser(html, 'rdfa')),
+      jsonld: safely(() => JsonldParser($html))
     }
   }
 
   return {
     parse,
     loadCheerioObject
+  }
+}
+
+function safely(op) {
+  try {
+    return op();
+  } catch (err) {
+    return {};
   }
 }
