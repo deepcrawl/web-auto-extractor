@@ -36,6 +36,6 @@ function safely(op) {
   try {
     return op();
   } catch (err) {
-    throw err;
+    return {};
   }
 }
