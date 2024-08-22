@@ -1,5 +1,4 @@
 import { getCheerioObject, cleanNewlinesMultispaceAndBackslashes } from "./utils";
-import $ from "cheerio";
 
 export default function (html, config = {}) {
   const $html = getCheerioObject(html);
