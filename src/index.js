@@ -1,4 +1,4 @@
-import $ from 'cheerio'
+import * as cheerio from 'cheerio'
 import MetaTagsParser from './parsers/metatag-parser'
 import MicroRdfaParser from './parsers/micro-rdfa-parser'
 import JsonldParser from './parsers/jsonld-parser'
@@ -15,7 +15,7 @@ export default function () {
 
   const parse = function (html, options) {
     if (!($html && $html.prototype && $html.prototype.cheerio)) {
-      $html = $.load(html, options)
+      $html = cheerio.load(html, options)
     }
 
     return {
@@ -36,6 +36,6 @@ function safely(op) {
   try {
     return op();
   } catch (err) {
-    return {};
+    throw err;
   }
 }
