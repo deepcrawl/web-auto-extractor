@@ -189,6 +189,69 @@
           "name": "Theatre"
         }
       }
+    ],
+    "VideoObject": [
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "caption": [
+          {
+            "@type": "MediaObject",
+            "encodingFormat": "srt",
+            "inLanguage": "en",
+            "url": "https://vod-media-aka.warnermediacdn.com/cnn/v2/clips/2024-09/1636191-e64e9c9bf6d74419bd550ed2fadd39c7/cc/russia-2024-election-interference-merrick-garland-digvid-1636191-cc.srt"
+          },
+          {
+            "@type": "MediaObject",
+            "encodingFormat": "vtt",
+            "inLanguage": "en",
+            "url": "https://vod-media-aka.warnermediacdn.com/cnn/v2/clips/2024-09/1636191-e64e9c9bf6d74419bd550ed2fadd39c7/cc/russia-2024-election-interference-merrick-garland-digvid-1636191-cc.vtt"
+          }
+        ],
+        "contentUrl": "https://vod-media-aka.warnermediacdn.com/cnn/v2/clips/2024-09/1636191-e64e9c9bf6d74419bd550ed2fadd39c7/mp4/russia-2024-election-interference-merrick-garland-digvid-1636191-1920x1080_8000k.mp4",
+        "dateModified": "2024-09-04T18:40:59.839Z",
+        "description": "The Biden administration <a href=\"https://www.cnn.com/2024/09/04/politics/biden-administration-accuse-russia-election-influence-efforts/index.html\">announced",
+        "duration": "PT00H05M53S",
+        "embedUrl": "https://fave.api.cnn.io/v1/fav/?video=meba112beee14257862c399e94f4a525eebd55fe71&stellarUri=cms.cnn.com/_components/video-resource/instances/cm0o728yo00003b6kh2iel9w6@published&stellarUdk=rn0827c5&customer=cnn&edition=domestic&env=prod",
+        "headline": "Merrick Garland shares details of Russian election interference accusations",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "additionalType": "video_leaf",
+          "dateModified": "2024-09-04T18:44:17.998Z",
+          "datePublished": "2024-09-04T18:44:17.998Z",
+          "description": "The Biden administration announced",
+          "headline": "Merrick Garland shares details of Russian election interference accusations",
+          "inLanguage": "en",
+          "name": "Merrick Garland shares details of Russian election interference accusations",
+          "publisher": {
+            "@type": "NewsMediaOrganization",
+            "foundingDate": "1980-06-01",
+            "logo": "https://media.cnn.com/api/v1/images/stellar/prod/cnnlogo.png?q=w_60,h_61",
+            "name": "CNN",
+            "sameAs": [
+              "https://www.facebook.com/cnn/",
+              "https://x.com/CNN",
+              "https://www.tiktok.com/@cnn",
+              "https://www.instagram.com/cnn/",
+              "https://www.youtube.com/cnn"
+            ],
+            "url": "https://www.cnn.com"
+          },
+          "url": "https://www.cnn.com/2024/09/04/politics/video/russia-2024-election-interference-merrick-garland-doj-digvid"
+        },
+        "name": "Merrick Garland shares details of Russian election interference accusations",
+        "thumbnail": {
+          "@type": "ImageObject",
+          "contentUrl": "https://media.cnn.com/api/v1/images/stellar/prod/mg.jpg?c=original",
+          "creditText": "Pool",
+          "height": "1080",
+          "width": "1920"
+        },
+        "thumbnailUrl": "https://media.cnn.com/api/v1/images/stellar/prod/mg.jpg?c=original",
+        "uploadDate": "2024-09-04T18:35:24.854Z"
+      }
     ]
   }
 }
