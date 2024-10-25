@@ -1,6 +1,7 @@
 const htmlparser = require("htmlparser2");
 
 function getPropValue(tagName, attribs, TYPE, PROP) {
+  if (tagName === "meta" && attribs.itemtype) return null;
   if (attribs[TYPE]) {
     return null;
   } else if ((tagName === "a" || tagName === "link") && attribs.href) {
@@ -45,10 +46,14 @@ const createHandler = function (specName) {
   const { TYPE, PROP, REQU } = getAttrNames(specName);
 
   const onopentag = function (tagName, attribs) {
+    if (tagName === "meta" && "itemtype" in attribs) {
+      delete attribs.itemtype;
+    }
+
     let currentScope = scopes[scopes.length - 1];
     let tag = false;
     if (attribs[TYPE]) {
-      if (REQU && !attribs.hasOwnProperty(REQU)) return
+      if (REQU && !attribs.hasOwnProperty(REQU)) return;
       if (attribs[PROP] && currentScope) {
         let newScope = {};
         currentScope[attribs[PROP]] = currentScope[attribs[PROP]] || [];
@@ -75,7 +80,6 @@ const createHandler = function (specName) {
           currentScope[attribs[PROP]] &&
           !Array.isArray(currentScope[attribs[PROP]])
         ) {
-          // PROP occurs for the second time, storing it as an array
           currentScope[attribs[PROP]] = [currentScope[attribs[PROP]]];
         }
 
