@@ -46,7 +46,11 @@ const createHandler = function (specName) {
   const { TYPE, PROP, REQU } = getAttrNames(specName);
 
   const onopentag = function (tagName, attribs) {
-    if (tagName === "meta" && "itemtype" in attribs) {
+    if (
+      tagName === "meta" &&
+      "itemtype" in attribs &&
+      specName.toLowerCase().startsWith("micro")
+    ) {
       delete attribs.itemtype;
     }
 
