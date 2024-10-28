@@ -1,7 +1,6 @@
 const htmlparser = require("htmlparser2");
 
 function getPropValue(tagName, attribs, TYPE, PROP) {
-  if (tagName === "meta" && attribs.itemtype) return null;
   if (attribs[TYPE]) {
     return null;
   } else if ((tagName === "a" || tagName === "link") && attribs.href) {
