@@ -15,5 +15,5 @@ export function getCheerioObject(html) {
 }
 
 export function cleanNewlinesMultispaceAndBackslashes(html) {
-  return html.replace(/(\r\n|\n|\r|\t)/gm, " ").replace(/\s\s+/gm, ' ').replace(/\\([^\"])/gm, "\\\\$1")
+  return html.replace(/(\r\n|\n|\r|\t)/gm, " ").replace(/\s\s+/gm, ' ').replace(/\\(?!\")/gm, "\\\\")
 }
