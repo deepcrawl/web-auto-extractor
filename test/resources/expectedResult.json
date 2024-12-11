@@ -187,6 +187,34 @@
     "Product": [
       {
         "@context": "http://schema.org/",
+        "@id": "p302309",
+        "@type": "Product",
+        "brand": {
+          "@type": "Brand",
+          "name": "Beretta"
+        },
+        "color": "Gray",
+        "description": "Beretta 1301 Mod 2 Tactical Pistol Grip 12 Gauge 3in Gray Semi Automatic Shotgun - 18.5in - Setting the standard for the world\\u2019s finest tactical shotgun introducing the next evolution of the world\\u2019s finest tactical shotgun, the Beretta 1301 Tactical Mod.2 Shotgun. With a legacy built on precision engineering and relentless innovation, the Beretta 1301 Tactical Mod.2 Shotgun emerges as the natural successor setting new standards for excellence in the realm of tactical shotguns. It boasts an upgraded forend with aggressive knurling ensuring a firm grip and three sections of M-Lok\\\\U00100002 for ease of attachments. A new semi-flat tactical style trigger offers a crisp break with minimal reset and a new Pro-Lifter allows for effortless reloading. The power of the B-LINK gas-system combined with the precision of the rotating bolt ensures you fast, reliable and smart cycling. Whether you are a professional operator, a dedicated competitor, or a home defender, this shotgun delivers the performance you need. Features Beretta\\u2019s ultrafast B-LINK gas operating system with a cross tube gas piston allows for 36% faster cycling than its competition. An upgraded forend and stock with aggressive knurling provides an unrivaled grip in even the most intense situations. Three sections of M-Lok allows for ease of customization of attaching accessories like lights or lasers to enhance your shooting experience. Designed for ease and speed, it ensures a smooth, trouble-free reload keeping your focus on the target. Offers a lightning fast, crisp break with reduced reset time, allowing for faster follow-up shots and unmatched accuracy.",
+        "gtin12": "082442979021",
+        "image": "https://www.sportsmans.com/medias/beretta-1301-mod-2-tactical-pistol-grip-12-gauge-3in-gray-semi-automatic-shotgun-185in-1864054-1.jpg?context=bWFzdGVyfGltYWdlc3wzOTgwMHxpbWFnZS9qcGVnfGFHRmhMMmcyTUM4eE1qVXhOemt4TmpVME1EazFPQzh4TWpBd0xXTnZiblpsY25OcGIyNUdiM0p0WVhSZlltRnpaUzFqYjI1MlpYSnphVzl1Um05eWJXRjBYM050ZHkweE9EWTBNRFUwTFRFdWFuQm58ODBmMGExZjZkZDgyOWI1OTU2ODY4YTNlNGM3MTZhMGNmNDFlZjhjNDBiNjEzNDhjNTJkZTNjZGYxNTU5OGU3OA",
+        "mpn": "J131M2TP18GR",
+        "name": "Beretta 1301 Mod 2 Tactical Pistol Grip 12 Gauge 3in Gray Semi Automatic Shotgun - 18.5in",
+        "offers": {
+          "@type": "Offer",
+          "availability": "InStock",
+          "itemCondition": "http://schema.org/NewCondition",
+          "price": "1899.99",
+          "priceCurrency": "USD",
+          "seller": {
+            "@type": "Organization",
+            "name": "Sportsman's Warehouse"
+          }
+        },
+        "productID": "p302309",
+        "sku": "1864054"
+      },
+      {
+        "@context": "http://schema.org/",
         "@type": "Product",
         "name": "Executive Anvil",
         "image": "http://www.example.com/anvil_executive.jpg",
