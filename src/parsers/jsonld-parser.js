@@ -1,4 +1,4 @@
-import { getCheerioObject, cleanNewlinesMultispaceAndBackslashesAndTrailingNonJsonCharacters } from "./utils";
+import { getCheerioObject, cleanNewlinesMultispaceAndBackslashes, getJsonObject } from "./utils";
 
 export default function (html, config = {}) {
   const $html = getCheerioObject(html);
@@ -6,7 +6,7 @@ export default function (html, config = {}) {
 
   $html('script[type="application/ld+json"]').each((index, item) => {
     try {
-      let parsedJSON = JSON.parse(cleanNewlinesMultispaceAndBackslashesAndTrailingNonJsonCharacters($html(item).html()));
+      let parsedJSON = JSON.parse(getJsonObject(cleanNewlinesMultispaceAndBackslashes($html(item).html())));
       if (!Array.isArray(parsedJSON)) {
         parsedJSON = [parsedJSON];
       }
