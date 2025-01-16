@@ -22,8 +22,8 @@ export function getJsonObject(html) {
   const openingBracket = html[0];
   const closingBracket = getClosingBracket(openingBracket);
   if (!closingBracket) return html;
-
-  const { index } = Array.from(html).reduce((acc, char, index) => {
+  const arrayHtml = html.split("");
+  const { index } = arrayHtml.reduce((acc, char, index) => {
     if (acc.counter === 0 && acc.index) return acc
 
     if (char === openingBracket) acc.counter += 1;
@@ -31,10 +31,10 @@ export function getJsonObject(html) {
     if (acc.counter === 0) acc.index=index + 1;
     
     return acc;
-  }, {index: undefined, counter: 0})
+  }, {index: undefined, counter: 0});
 
   if (!index) return html;
-  return html.substring(0, index)
+  return arrayHtml.slice(0, index).join("");
 }
 
 function getClosingBracket(openingBracket) {
