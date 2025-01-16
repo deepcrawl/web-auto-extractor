@@ -14,6 +14,6 @@ export function getCheerioObject(html) {
   return $html;
 }
 
-export function cleanNewlinesMultispaceAndBackslashes(html) {
-  return html.replace(/(\r\n|\n|\r|\t)/gm, " ").replace(/\s\s+/gm, ' ').replace(/\\(?!\")/gm, "\\\\")
+export function cleanNewlinesMultispaceAndBackslashesAndTrailingNonJsonCharacters(html) {
+  return html.trim().replace(/(\r\n|\n|\r|\t)/gm, " ").replace(/\s\s+/gm, ' ').replace(/\\(?!\")/gm, "\\\\").replace(/[^\]\}]*$/, "")
 }
