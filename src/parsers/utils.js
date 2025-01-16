@@ -24,7 +24,7 @@ export function getJsonObject(html) {
   if (!closingBracket) return html;
 
   const { index } = Array.from(html).reduce((acc, char, index) => {
-    if (acc.counter === 0 && acc.index && acc.index !== 0) return acc
+    if (acc.counter === 0 && acc.index) return acc
 
     if (char === openingBracket) acc.counter += 1;
     if (char === closingBracket) acc.counter -= 1;
@@ -32,7 +32,7 @@ export function getJsonObject(html) {
     
     return acc;
   }, {index: undefined, counter: 0})
-  
+
   if (!index) return html;
   return html.substring(0, index)
 }
