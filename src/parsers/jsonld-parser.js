@@ -6,7 +6,7 @@ export default function (html, config = {}) {
 
   $html('script[type="application/ld+json"]').each((index, item) => {
     try {
-      let parsedJSON = JSON.parse(getJsonObject(cleanNewlinesMultispaceAndBackslashes($html(item).html())));
+      let parsedJSON = getJsonObject(cleanNewlinesMultispaceAndBackslashes($html(item).html()));
       if (!Array.isArray(parsedJSON)) {
         parsedJSON = [parsedJSON];
       }

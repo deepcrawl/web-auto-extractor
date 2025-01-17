@@ -21,20 +21,19 @@ export function cleanNewlinesMultispaceAndBackslashes(html) {
 export function getJsonObject(html) {
   const openingBracket = html[0];
   const closingBracket = getClosingBracket(openingBracket);
-  if (!closingBracket) return html;
-  const arrayHtml = html.split("");
-  const { index } = arrayHtml.reduce((acc, char, index) => {
-    if (acc.counter === 0 && acc.index) return acc
+  if (!closingBracket) return JSON.parse(html);
+  return extractJson(html, closingBracket);
+}
 
-    if (char === openingBracket) acc.counter += 1;
-    if (char === closingBracket) acc.counter -= 1;
-    if (acc.counter === 0) acc.index=index + 1;
-    
-    return acc;
-  }, {index: undefined, counter: 0});
-
-  if (!index) return html;
-  return arrayHtml.slice(0, index).join("");
+function extractJson(html, closingBracket) {
+  const closingBracketIndex = html.lastIndexOf(closingBracket);
+  if (closingBracketIndex === -1) throw Error("Not able to extract json");
+  const jsonCandidate = html.substring(0, closingBracketIndex + 1);
+  try {
+    return JSON.parse(jsonCandidate);
+  } catch (e) {
+    return extractJson(html.substring(0, closingBracketIndex), closingBracket);
+  }
 }
 
 function getClosingBracket(openingBracket) {
