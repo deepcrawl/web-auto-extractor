@@ -27,7 +27,7 @@ export function getJsonObject(html) {
 
 function extractJson(html, closingBracket) {
   const closingBracketIndex = html.lastIndexOf(closingBracket);
-  if (closingBracketIndex === -1) return JSON.parse(html);
+  if (closingBracketIndex === -1) throw Error("Not able to extract json");
   const jsonCandidate = html.substring(0, closingBracketIndex + 1);
   try {
     return JSON.parse(jsonCandidate);
