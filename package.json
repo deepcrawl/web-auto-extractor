@@ -15,7 +15,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "cheerio": "^1.0.0",
-    "htmlparser2": "^6.1.0"
+    "htmlparser2": "^10.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
