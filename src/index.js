@@ -1,9 +1,6 @@
 import * as cheerio from 'cheerio'
-import MicroRdfaParser from './parsers/micro-rdfa-parser'
-import JsonldParser from './parsers/jsonld-parser'
-if (!global._babelPolyfill) {
-  require('babel-polyfill')
-}
+import MicroRdfaParser from './parsers/micro-rdfa-parser.js'
+import JsonldParser from './parsers/jsonld-parser.js'
 
 export default function () {
   let $html = null

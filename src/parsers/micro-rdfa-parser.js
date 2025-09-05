@@ -1,4 +1,4 @@
-const htmlparser = require("htmlparser2");
+import * as htmlparser from "htmlparser2";
 
 function getPropValue(tagName, attribs, TYPE, PROP) {
   if (attribs[TYPE]) {

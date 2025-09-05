@@ -1,4 +1,4 @@
-import { getCheerioObject, cleanNewlinesMultispaceAndBackslashes, getJsonObject } from "./utils";
+import { getCheerioObject, cleanNewlinesMultispaceAndBackslashes, getJsonObject } from "./utils.js";
 
 export default function (html, config = {}) {
   const $html = getCheerioObject(html);

@@ -1,31 +1,36 @@
 {
   "name": "@deepcrawl/web-auto-extractor",
-  "version": "1.0.19",
+  "version": "1.0.21",
   "description": "Automatically extracts structured information from webpages",
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "src/index.cjs",
+  "module": "src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.cjs"
+    }
+  },
   "scripts": {
-    "build": "babel src -d dist",
-    "test": "mocha --recursive --require babel-core/register",
-    "prepublish": "npm run test && npm run build"
+    "build": "esbuild src/index.js --bundle --platform=node --format=cjs --outfile=src/index.cjs --external:cheerio --external:htmlparser2",
+    "test": "mocha --recursive 'test/**/*.js'",
+    "prepublishOnly": "npm test && npm run build"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=20"
   },
   "license": "MIT",
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "cheerio": "^1.0.0",
-    "htmlparser2": "^10.0.0"
+    "cheerio": "1.1.2",
+    "htmlparser2": "10.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "chai": "^4.3.4",
-    "mocha": "^9.0.0",
-    "nodemon": "^2.0.7",
-    "sinon": "^11.1.1",
-    "standard": "^16.0.3"
+    "chai": "6.0.1",
+    "esbuild": "^0.25.9",
+    "mocha": "11.7.2",
+    "nodemon": "3.1.10",
+    "sinon": "21.0.0",
+    "standard": "17.1.2"
   },
   "keywords": [
     "crawler",
