@@ -1,8 +1,8 @@
 /* eslint-env mocha */
-import "babel-polyfill";
-import fs from "fs";
-import { assert } from "chai";
-import WAE from "../src";
+require("babel-polyfill");
+const fs = require("fs");
+const { assert } = require("chai");
+const WAE = require("../src").default;
 
 const fileReader = (fileName) =>
   fs.readFileSync(fileName, { encoding: "utf-8" });
