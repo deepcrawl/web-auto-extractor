@@ -1,31 +1,4 @@
 {
-  "metatags": {
-    "priceCurrency": ["USD", "USD", "GBP"],
-    "datePublished": ["2009-05-08"],
-    "prepTime": ["PT15M"],
-    "cookTime": ["PT1H"],
-    "interactionType": ["http://schema.org/CommentAction"],
-    "refresh": ["30"],
-    "userInteractionCount": ["140"],
-    "price": ["159"],
-    "color": ["Brown"],
-    "sku": ["OEPJX150-C01"],
-    "itemCondition": [
-      "http://schema.org/NewCondition",
-      "https://schema.org/NewCondition"
-    ],
-    "name": ["Brown Leather Tassel Loafer"],
-    "availability": ["http://schema.org/InStock"],
-    "ratingValue": ["4.9"],
-    "reviewCount": ["8"],
-    "priceValidUntil": ["2025-04-24"],
-    "description": [
-      "A classic brown loafer with preppy charm, these shoes are superbly manufactured for a timeless investment. Constructed from premium leather with leather lining and leather soles, this classic design is made your comfort and durability. \n<br/>\n<br/>• Leather Upper\n<br/>• Leather Lining\n<br/>• Leather Sole \n<br/>• Rubber Heel \n<br/><br/> Made in Portugal"
-    ],
-    "image": [
-      "https://images.hawesandcurtis.com/tr:q-80/OE/OEPJX150-C01-166860-870px-1002px.jpg"
-    ]
-  },
   "microdata": {
     "Offer": [
       {
@@ -130,6 +103,38 @@
           "userInteractionCount": "140"
         }
       }
+    ],
+    "BreadcrumbList": [
+      {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@context": "https://schema.org/",
+            "@type": "ListItem",
+            "item": "https://example.com/",
+            "name": "Home",
+            "position": "1"
+          },
+          {
+            "@context": "https://schema.org/",
+            "@type": "ListItem",
+            "item": {
+              "@context": "https://schema.org/",
+              "@type": "Thing",   
+              "@id": "https://example.com/products",
+              "name": "Products"
+            },
+            "position": "2"
+          },
+          {
+            "@context": "https://schema.org/",
+            "@type": "ListItem", 
+            "name": "Laptops",
+            "position": "3"
+          }
+        ]
+      }
     ]
   },
 
@@ -159,6 +164,37 @@
           "itemCondition": "http://schema.org/UsedCondition",
           "availability": "http://schema.org/InStock"
         }
+      }
+    ],
+    "BreadcrumbList": [
+      {
+        "@context": "https://schema.org/",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "item": {
+              "@id": "https://example.com/",
+              "@type": "WebPage",
+              "name": "Home"
+            },
+            "position": "1"
+          },
+          {
+            "@type": "ListItem",
+            "item": {
+              "@id": "https://example.com/products",
+              "@type": "WebPage",
+              "name": "Products"
+            },
+            "position": "2"
+          },
+          {
+            "@type": "ListItem", 
+            "name": "Laptops",
+            "position": "3"
+          }
+        ]
       }
     ]
   },

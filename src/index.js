@@ -1,10 +1,6 @@
 import * as cheerio from 'cheerio'
-import MetaTagsParser from './parsers/metatag-parser'
-import MicroRdfaParser from './parsers/micro-rdfa-parser'
-import JsonldParser from './parsers/jsonld-parser'
-if (!global._babelPolyfill) {
-  require('babel-polyfill')
-}
+import MicroRdfaParser from './parsers/micro-rdfa-parser.js'
+import JsonldParser from './parsers/jsonld-parser.js'
 
 export default function () {
   let $html = null
@@ -19,7 +15,6 @@ export default function () {
     }
 
     return {
-      metatags: safely(() => MetaTagsParser($html)),
       microdata: safely(() => MicroRdfaParser(html, 'micro')),
       rdfa: safely(() => MicroRdfaParser(html, 'rdfa')),
       jsonld: safely(() => JsonldParser($html))

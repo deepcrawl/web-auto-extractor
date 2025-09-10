@@ -1,4 +1,4 @@
-const htmlparser = require("htmlparser2");
+import * as htmlparser from "htmlparser2";
 
 function getPropValue(tagName, attribs, TYPE, PROP) {
   if (attribs[TYPE]) {
@@ -15,18 +15,21 @@ function getPropValue(tagName, attribs, TYPE, PROP) {
 }
 
 const getAttrNames = (specName) => {
-  let TYPE, PROP, REQU;
+  let TYPE, PROP, REQU, ID, HREF, RESOURCE;
   if (specName.toLowerCase().startsWith("micro")) {
     TYPE = "itemtype";
     PROP = "itemprop";
     REQU = "itemscope";
+    ID = "itemid";
   } else if (specName.toLowerCase().startsWith("rdfa")) {
     TYPE = "typeof";
     PROP = "property";
+    HREF = "href";
+    RESOURCE = "resource";
   } else {
     throw new Error("Unsupported spec: use either micro or rdfa");
   }
-  return { TYPE, PROP, REQU };
+  return { TYPE, PROP, REQU, ID, HREF, RESOURCE};
 };
 
 const getType = (typeString) => {
@@ -42,7 +45,7 @@ const createHandler = function (specName) {
   let tags = [];
   let topLevelScope = {};
   let textForProp = null;
-  const { TYPE, PROP, REQU } = getAttrNames(specName);
+  const { TYPE, PROP, REQU, ID, HREF, RESOURCE } = getAttrNames(specName);
 
   const onopentag = function (tagName, attribs) {
     if (
@@ -76,6 +79,9 @@ const createHandler = function (specName) {
         const vocab = attribs.vocab;
         currentScope["@context"] = context || vocab;
         currentScope["@type"] = type;
+        if (ID && attribs[ID]) currentScope["@id"] = attribs[ID];   
+        if (HREF && attribs[HREF]) currentScope["@id"] = attribs[HREF];
+        if (RESOURCE && attribs[RESOURCE]) currentScope["@id"] = attribs[RESOURCE];
         tag = TYPE;
         scopes.push(currentScope);
       } else if (attribs[PROP]) {

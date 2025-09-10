@@ -309,3 +309,41 @@ the Executive Anvil is perfect for the business
     </div>
   </section>
 </div>
+<!-- Microdata BreadcrumbList -->
+<div itemscope itemtype="https://schema.org/BreadcrumbList">
+  <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+    <a itemprop="item" href="https://example.com/">
+      <span itemprop="name">Home</span>
+    </a>
+    <meta itemprop="position" content="1" />
+  </div>
+  <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+    <div itemprop="item" itemscope itemtype="https://schema.org/Thing" itemid="https://example.com/products">
+      <span itemprop="name">Products</span>
+    </div>
+    <meta itemprop="position" content="2" />
+  </div>
+  <div itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+    <span itemprop="name">Laptops</span>
+    <meta itemprop="position" content="3" />
+  </div>
+</div>
+<!-- RDFa BreadcrumbList -->
+<ol vocab="https://schema.org/" typeof="BreadcrumbList">
+  <li property="itemListElement" typeof="ListItem">
+    <a property="item" typeof="WebPage" href="https://example.com/">
+      <span property="name">Home</span>
+    </a>
+    <meta property="position" content="1" />
+  </li>
+  <li property="itemListElement" typeof="ListItem">
+    <div property="item" typeof="WebPage" resource="https://example.com/products">
+      <span property="name">Products</span>
+    </div>
+    <meta property="position" content="2" />
+  </li>
+  <li property="itemListElement" typeof="ListItem">
+    <span property="name">Laptops</span>
+    <meta property="position" content="3" />
+  </li>
+</ol>

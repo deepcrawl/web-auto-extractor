@@ -1,6 +1,5 @@
 /* eslint-env mocha */
-import "babel-polyfill";
-import { getJsonObject } from "../src/parsers/utils";
+import { getJsonObject } from "../src/parsers/utils.js";
 import { assert } from "chai";
 import fs from "fs";
 
